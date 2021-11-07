@@ -4,7 +4,7 @@
 pkgname=catgirl
 pkgver=1.8
 pkgrel=1
-pkgdesc='catgirl is a TLS-only terminal IRC client.'
+pkgdesc='TLS-only terminal IRC client'
 arch=('x86_64')
 url="https://git.causal.agency/${pkgname}/"
 license=('GPL3')
