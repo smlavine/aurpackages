@@ -18,8 +18,7 @@ Snapshots of AUR packages can be obtained with the following command:
 
 # Packages
 
-None yet.
-
+- [catgirl](https://aur.archlinux.org/packages/catgirl)
 
 ### References
 
