@@ -15,6 +15,8 @@ Snapshots of AUR packages can be obtained with the following command:
 
 	curl -O "https://aur.archlinux.org/cgit/aur.git/snapshot/${pkgname}.tar.gz"
 
+The ```updpkgsums``` (pacman-contrib) script can be used to update the
+checksums in a PKGBUILD.
 
 # Packages
 
