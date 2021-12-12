@@ -11,13 +11,16 @@ It is generated using the following command:
 
 	makepkg --printsrcinfo > .SRCINFO
 
+
 Snapshots of AUR packages can be obtained with the following command:
 
 	curl -O "https://aur.archlinux.org/cgit/aur.git/snapshot/${pkgname}.tar.gz"
 
+
 AUR git repositories can be cloned from:
 
 	ssh://aur@aur.archlinux.org/${pkgname}.git
+
 
 The ```updpkgsums``` (pacman-contrib) script can be used to update the
 checksums in a PKGBUILD.
