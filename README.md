@@ -3,6 +3,11 @@
 These are packages that I maintain for the
 [Arch User Repository (AUR)](https://aur.archlinux.org).
 
+- [catgirl][catgirl-git] ([AUR][catgirl-aur], [Upstream][catgirl-upstream])
+
+[catgirl-git]: https://git.sr.ht/~smlavine/catgirl-aur
+[catgirl-aur]: https://aur.archlinux.org/packages/catgirl
+[catgirl-upstream]: https://git.causal.agency/catgirl/
 
 ## Notes (mainly for myself)
 
@@ -24,10 +29,6 @@ AUR git repositories can be cloned from:
 
 The ```updpkgsums``` (pacman-contrib) script can be used to update the
 checksums in a PKGBUILD.
-
-# Packages
-
-- [catgirl](https://aur.archlinux.org/packages/catgirl)
 
 ### References
 
