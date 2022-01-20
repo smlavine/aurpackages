@@ -3,7 +3,7 @@
 These are packages that I maintain for the
 [Arch User Repository (AUR)](https://aur.archlinux.org).
 
-- [catgirl][catgirl-git] ([AUR][catgirl-aur], [Upstream][catgirl-upstream])
+- [catgirl][catgirl-git] ([AUR][catgirl-aur], [upstream][catgirl-upstream])
 
 [catgirl-git]: https://git.sr.ht/~smlavine/catgirl-aur
 [catgirl-aur]: https://aur.archlinux.org/packages/catgirl
