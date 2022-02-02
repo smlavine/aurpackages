@@ -1,0 +1,39 @@
+image: alpine/yml
+oauth: git.sr.ht/REPOSITORIES:RW
+triggers:
+  - action: email
+    condition: always
+    to: Sebastian LaVine <mail@smlavine.com>
+packages:
+  - py3-pip
+sources:
+  - https://git.sr.ht/~smlavine/aurpackages
+tasks:
+  - mistletoe: |
+    pip3 install mistletoe
+  - generate-and-upload: |
+    # In sr.ht/~smlavine/aurpackages, there are git repositories of AUR
+    # packages that I maintain. I don't want to have a README.md in those
+    # repositories, because their primary home is on aur.archlinux.org, but I
+    # still want to show the project README on their git.sr.ht page. This
+    # uploads the README for this repository to those repositories. This
+    # GraphQL endpoint expects HTML, so we have to convert it ourselves. We use
+    # mistletoe because that is the markdown parser used by sourcehut itself.
+    # Inline in this script are repository IDs for each repository we upload
+    # the README to. They are:
+    #     ~smlavine/catgirl-aur (72346)
+    cd aurpackages
+    mistletoe README.md |
+        jq -sR \
+            '{
+                "query": "mutation UpdateRepo($id, Int!, $readme: String!) {
+                    updateRepository(id: $id, input: { readme: $readme}) {
+                        id
+                    }
+                }",
+                "variables": {
+                    "id": 72346,
+                    "readme": .
+                }
+            }' |
+        acurl -H "Content-Type: application/json" -d@- https://git.sr.ht/query
