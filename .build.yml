@@ -25,7 +25,7 @@ tasks:
       cmark -t html README.md |
           jq -sR \
               '{
-                  "query": "mutation UpdateRepo($id, Int!, $readme: String!) {
+                  "query": "mutation UpdateRepo($id: Int!, $readme: String!) {
                       updateRepository(id: $id, input: { readme: $readme}) {
                           id
                       }
