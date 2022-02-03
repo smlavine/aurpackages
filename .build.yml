@@ -20,8 +20,17 @@ tasks:
   # They are:
   #     ~smlavine/catgirl-aur (72346)
   - convert-md-to-html: |
+      # sourcehut renders markdown files with one heading level below what is
+      # generated to html. So we have to adjust headings ourselves to make our
+      # READMEs look the same as other markdown files rendered on sourcehut.
       set -o pipefail
-      cmark aurpackages/README.md | tee README.html
+      cmark aurpackages/README.md |
+          sed -e 's:^<h5>:<h6>:' -e 's:<\h5>$:<\h6>:' \
+              -e 's:^<h4>:<h5>:' -e 's:<\h4>$:<\h5>:' \
+              -e 's:^<h3>:<h4>:' -e 's:<\h3>$:<\h4>:' \
+              -e 's:^<h2>:<h3>:' -e 's:<\h2>$:<\h3>:' \
+              -e 's:^<h1>:<h2>:' -e 's:<\h1>$:<\h2>:' |
+          tee README.html
   - generate-query: |
       set -o pipefail
       jq -sR \
