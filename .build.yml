@@ -6,6 +6,7 @@ triggers:
     to: Sebastian LaVine <mail@smlavine.com>
 packages:
   - py3-pip
+  - jq
 sources:
   - https://git.sr.ht/~smlavine/aurpackages
 tasks:
