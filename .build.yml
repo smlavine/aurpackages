@@ -20,7 +20,7 @@ tasks:
   # They are:
   #     ~smlavine/catgirl-aur (72346)
   - convert-md-to-html: |
-      cmark aurpackages/README.md > README.html
+      cmark aurpackages/README.md | tee README.html
   - generate-query: |
       jq -sR \
           '{
@@ -33,7 +33,7 @@ tasks:
                   "id": 72346,
                   "readme": .
               }
-          }' < README.html > query.graphql
+          }' < README.html | tee query.graphql
   - send-query: |
       acurl -H "Content-Type: application/json" -d@query.graphql \
           https://git.sr.ht/query
