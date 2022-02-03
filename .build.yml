@@ -2,7 +2,7 @@ image: alpine/edge
 oauth: git.sr.ht/REPOSITORIES:RW
 triggers:
   - action: email
-    condition: always
+    condition: failure
     to: Sebastian LaVine <mail@smlavine.com>
 packages:
   - cmark
