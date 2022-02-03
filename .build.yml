@@ -20,8 +20,10 @@ tasks:
   # They are:
   #     ~smlavine/catgirl-aur (72346)
   - convert-md-to-html: |
+      set -o pipefail
       cmark aurpackages/README.md | tee README.html
   - generate-query: |
+      set -o pipefail
       jq -sR \
           '{
               "query": "mutation UpdateRepo($id: Int!, $readme: String!) {
