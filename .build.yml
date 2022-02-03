@@ -22,7 +22,7 @@ tasks:
       # the README to. They are:
       #     ~smlavine/catgirl-aur (72346)
       cd aurpackages
-      cmark -t html README.md |
+      cmark README.md |
           jq -sR \
               '{
                   "query": "mutation UpdateRepo($id: Int!, $readme: String!) {
