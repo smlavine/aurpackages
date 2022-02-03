@@ -1,4 +1,4 @@
-image: alpine/yml
+image: alpine/edge
 oauth: git.sr.ht/REPOSITORIES:RW
 triggers:
   - action: email
