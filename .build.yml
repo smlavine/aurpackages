@@ -11,7 +11,7 @@ sources:
   - https://git.sr.ht/~smlavine/aurpackages
 tasks:
   - mistletoe: |
-      pip3 install mistletoe
+      pip3 install mistletoe  # installs to ~/.local/bin
   - generate-and-upload: |
       # In sr.ht/~smlavine/aurpackages, there are git repositories of AUR
       # packages that I maintain. I don't want to have a README.md in those
@@ -24,7 +24,7 @@ tasks:
       # the README to. They are:
       #     ~smlavine/catgirl-aur (72346)
       cd aurpackages
-      mistletoe README.md |
+      ~/.local/bin/mistletoe README.md |
           jq -sR \
               '{
                   "query": "mutation UpdateRepo($id, Int!, $readme: String!) {
