@@ -32,4 +32,4 @@ checksums in a PKGBUILD.
 
 ### References
 
-https://wiki.archlinux.org/title/.SRCINFO#Generation
+<https://wiki.archlinux.org/title/.SRCINFO#Generation>
