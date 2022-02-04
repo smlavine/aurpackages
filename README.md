@@ -1,4 +1,4 @@
-# AUR packages
+# [aurpackages](https://sr.ht/~smlavine/aurpackages)
 
 These are packages that I maintain for the
 [Arch User Repository (AUR)](https://aur.archlinux.org).
