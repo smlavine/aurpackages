@@ -6,7 +6,7 @@ triggers:
     to: Sebastian LaVine <mail@smlavine.com>
 packages:
   - cmark
-  - jq
+  - jo
 sources:
   - https://git.sr.ht/~smlavine/aurpackages
 tasks:
@@ -33,18 +33,10 @@ tasks:
           tee README.html
   - generate-query: |
       set -o pipefail
-      jq -sR \
-          '{
-              "query": "mutation UpdateRepo($id: Int!, $readme: String!) {
-                  updateRepository(id: $id, input: { readme: $readme }) {
-                      id
-                  }
-              }",
-              "variables": {
-                  "id": 72346,
-                  "readme": .
-              }
-          }' < README.html | tee query.graphql
+      jo variables[id]=72346 variables[readme]=@README.html query='
+          mutation UpdateRepo($id: Int!, $readme: String!) {
+              updateRepository(id: $id, input: { readme: $readme }) { id }
+          }' | tee query.graphql
   - send-query: |
       acurl -H "Content-Type: application/json" -d@query.graphql \
           https://git.sr.ht/query
