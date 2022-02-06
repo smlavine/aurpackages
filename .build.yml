@@ -36,7 +36,7 @@ tasks:
       jq -sR \
           '{
               "query": "mutation UpdateRepo($id: Int!, $readme: String!) {
-                  updateRepository(id: $id, input: { readme: $readme}) {
+                  updateRepository(id: $id, input: { readme: $readme }) {
                       id
                   }
               }",
