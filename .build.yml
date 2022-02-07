@@ -31,12 +31,14 @@ tasks:
               -e 's:^<h2>:<h3>:' -e 's:</h2>$:</h3>:' \
               -e 's:^<h1>:<h2>:' -e 's:</h1>$:</h2>:' |
           tee README.html
-  - generate-query: |
-      set -o pipefail
-      jo variables[id]=72346 variables[readme]=@README.html query='
-          mutation UpdateRepo($id: Int!, $readme: String!) {
-              updateRepository(id: $id, input: { readme: $readme }) { id }
-          }' | tee query.graphql
   - send-query: |
-      acurl -H "Content-Type: application/json" -d@query.graphql \
-          https://git.sr.ht/query
+      set -o pipefail
+      for repo_id in 72346; do
+          jo -p variables[id]="$repo_id" variables[readme]=@README.html query='
+              mutation UpdateRepo($id: Int!, $readme: String!) {
+                  updateRepository(id: $id, input: { readme: $readme }) { id }
+              }' |
+          tee /proc/self/fd/2 |  # /dev/stderr symlink is broken on alpine jobs
+          acurl -d@- -H "Content-Type: application/json" \
+              https://git.sr.ht/query
+      done
