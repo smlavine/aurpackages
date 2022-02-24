@@ -38,6 +38,6 @@ tasks:
               mutation UpdateRepo($id: Int!, $readme: String!) {
                   updateRepository(id: $id, input: { readme: $readme }) { id }
               }' |
-          acurl -d@- -H "Content-Type: application/json" \
+          acurl -Ss -d@- -H "Content-Type: application/json" \
               https://git.sr.ht/query
       done
