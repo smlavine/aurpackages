@@ -1,5 +1,5 @@
 image: alpine/edge
-oauth: git.sr.ht/REPOSITORIES:RW
+oauth: git.sr.ht/REPOSITORIES:RW git.sr.ht/PROFILE:RO
 triggers:
   - action: email
     condition: failure
@@ -38,7 +38,6 @@ tasks:
               mutation UpdateRepo($id: Int!, $readme: String!) {
                   updateRepository(id: $id, input: { readme: $readme }) { id }
               }' |
-          tee /proc/self/fd/2 |  # /dev/stderr symlink is broken on alpine jobs
           acurl -d@- -H "Content-Type: application/json" \
               https://git.sr.ht/query
       done
