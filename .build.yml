@@ -7,18 +7,10 @@ triggers:
 packages:
   - cmark
   - jo
+  - jq
 sources:
   - https://git.sr.ht/~smlavine/aurpackages
 tasks:
-  # In sr.ht/~smlavine/aurpackages, there are git repositories of AUR
-  # packages that I maintain. I don't want to have a README.md in those
-  # repositories, because their primary home is on aur.archlinux.org, but I
-  # still want to show the project README on their git.sr.ht page. This
-  # uploads the README for this repository to those repositories. This
-  # GraphQL endpoint expects HTML, so we have to convert it here. Inline in
-  # this script are repository IDs for each repository I upload the README to.
-  # They are:
-  #     ~smlavine/catgirl-aur (72346)
   - convert-md-to-html: |
       # sourcehut renders markdown files with one heading level below what is
       # generated to html. So we have to adjust headings ourselves to make our
@@ -31,10 +23,13 @@ tasks:
               -e 's:^<h2>:<h3>:' -e 's:</h2>$:</h3>:' \
               -e 's:^<h1>:<h2>:' -e 's:</h1>$:</h2>:' |
           tee README.html
-  - send-query: |
+  - update-readmes: |
       set -o pipefail
-      for repo_id in 72346; do
-          jo -p variables[id]="$repo_id" variables[readme]=@README.html query='
+      for r in catgirl-aur; do
+          id="$(printf 'query { me { repository(name: "%s") { id } } }' "$r" |
+              acurl -Ss -G --data-urlencode query@- https://git.sr.ht/query |
+              jq '.data.me.repository.id')"
+          jo -p variables[id]="$id" variables[readme]=@README.html query='
               mutation UpdateRepo($id: Int!, $readme: String!) {
                   updateRepository(id: $id, input: { readme: $readme }) { id }
               }' |
