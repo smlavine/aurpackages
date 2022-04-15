@@ -4,7 +4,8 @@ These are packages that I maintain for the
 [Arch User Repository (AUR)](https://aur.archlinux.org).
 
 - [catgirl][catgirl-git] ([AUR][catgirl-aur], [upstream][catgirl-upstream])
-- [jo][jo-git] ([AUR][jo-aur], [upstream][jo-upstream])
+- [jo][jo-git] (<s>[AUR][jo-aur]</s>, [upstream][jo-upstream])
+	- No longer in AUR, [yoinked][jo-community] by a TU
 
 [catgirl-git]: https://git.sr.ht/~smlavine/catgirl-aur
 [catgirl-aur]: https://aur.archlinux.org/packages/catgirl
@@ -12,6 +13,7 @@ These are packages that I maintain for the
 
 [jo-git]: https://git.sr.ht/~smlavine/jo-aur
 [jo-aur]: https://aur.archlinux.org/packages/jo
+[jo-community]: https://archlinux.org/packages/jo
 [jo-upstream]: https://github.com/jpmens/jo
 
 ## Notes (mainly for myself)
