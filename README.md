@@ -34,7 +34,7 @@ AUR git repositories can be cloned from:
 	ssh://aur@aur.archlinux.org/${pkgname}.git
 
 
-The ```updpkgsums``` (pacman-contrib) script can be used to update the
+The `updpkgsums` (pacman-contrib) script can be used to update the
 checksums in a PKGBUILD.
 
 ### References
