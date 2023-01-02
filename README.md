@@ -5,8 +5,6 @@ These are packages that I maintain for the
 
 - [autojump-rs][autojump-rs-git] ([AUR][autojump-rs-aur], [upstream][autojump-rs-upstream])
 - [catgirl][catgirl-git] ([AUR][catgirl-aur], [upstream][catgirl-upstream])
-- [jo][jo-git] (<del>[AUR][jo-aur]</del>, [upstream][jo-upstream])
-	- No longer in AUR, [yoinked][jo-community] by a TU
 
 [autojump-rs-git]: https://git.sr.ht/~smlavine/autojump-rs-aur
 [autojump-rs-aur]: https://aur.archlinux.org/packages/autojump-rs
@@ -15,11 +13,6 @@ These are packages that I maintain for the
 [catgirl-git]: https://git.sr.ht/~smlavine/catgirl-aur
 [catgirl-aur]: https://aur.archlinux.org/packages/catgirl
 [catgirl-upstream]: https://git.causal.agency/catgirl/
-
-[jo-git]: https://git.sr.ht/~smlavine/jo-aur
-[jo-aur]: https://aur.archlinux.org/packages/jo
-[jo-community]: https://archlinux.org/packages/jo
-[jo-upstream]: https://github.com/jpmens/jo
 
 ## Notes (mainly for myself)
 
