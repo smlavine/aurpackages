@@ -3,9 +3,14 @@
 These are packages that I maintain for the
 [Arch User Repository (AUR)](https://aur.archlinux.org).
 
+- [autojump-rs][autojump-rs-git] ([AUR][autojump-rs-aur], [upstream][autojump-rs-upstream])
 - [catgirl][catgirl-git] ([AUR][catgirl-aur], [upstream][catgirl-upstream])
 - [jo][jo-git] (<del>[AUR][jo-aur]</del>, [upstream][jo-upstream])
 	- No longer in AUR, [yoinked][jo-community] by a TU
+
+[autojump-rs-git]: https://git.sr.ht/~smlavine/autojump-rs-aur
+[autojump-rs-aur]: https://aur.archlinux.org/packages/autojump-rs
+[autojump-rs-upstream]: https://github.com/xen0n/autojump-rs
 
 [catgirl-git]: https://git.sr.ht/~smlavine/catgirl-aur
 [catgirl-aur]: https://aur.archlinux.org/packages/catgirl
