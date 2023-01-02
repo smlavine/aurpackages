@@ -25,7 +25,7 @@ tasks:
           tee README.html
   - update-readmes: |
       set -o pipefail
-      for r in autojump-rs-aur catgirl-aur jo-aur; do
+      for r in autojump-rs-aur catgirl-aur; do
           id="$(printf 'query { me { repository(name: "%s") { id } } }' "$r" |
               acurl -Ss -G --data-urlencode query@- https://git.sr.ht/query |
               jq '.data.me.repository.id')"
