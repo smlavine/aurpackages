@@ -8,6 +8,7 @@ These are packages that I maintain for the
 - [gmnitohtml][gmnitohtml-git] ([AUR][gmnitohtml-aur], [upstream][gmnitohtml-upstream])
 - [kiln][kiln-git] ([AUR][kiln-aur], [upstream][kiln-upstream])
 - [mdtohtml][mdtohtml-git] ([AUR][mdtohtml-aur], [upstream][mdtohtml-upstream])
+- [onclick][onclick-git] ([AUR][onclick-aur], [upstream][onclick-upstream])
 
 [autojump-rs-git]: https://git.sr.ht/~smlavine/autojump-rs-aur
 [autojump-rs-aur]: https://aur.archlinux.org/packages/autojump-rs
@@ -28,6 +29,10 @@ These are packages that I maintain for the
 [mdtohtml-git]: https://git.sr.ht/~smlavine/mdtohtml-aur
 [mdtohtml-aur]: https://aur.archlinux.org/packages/mdtohtml
 [mdtohtml-upstream]: https://git.sr.ht/~adnano/mdtohtml
+
+[onclick-git]: https://git.sr.ht/~smlavine/onclick-aur
+[onclick-aur]: https://aur.archlinux.org/packages/onclick
+[onclick-upstream]: https://sr.ht/~smlavine/onclick
 
 ## Notes (mainly for myself)
 
