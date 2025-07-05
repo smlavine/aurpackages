@@ -3,7 +3,7 @@
 These are packages that I maintain for the
 [Arch User Repository (AUR)](https://aur.archlinux.org).
 
-- [autojump-rs][autojump-rs-git] ([AUR][autojump-rs-aur], [upstream][autojump-rs-upstream])
+- [autojump-rs-bin][autojump-rs-git] ([AUR][autojump-rs-aur], [upstream][autojump-rs-upstream])
 - [catgirl][catgirl-git] ([AUR][catgirl-aur], [upstream][catgirl-upstream])
 - [gmnitohtml][gmnitohtml-git] ([AUR][gmnitohtml-aur], [upstream][gmnitohtml-upstream])
 - [kiln][kiln-git] ([AUR][kiln-aur], [upstream][kiln-upstream])
@@ -11,7 +11,7 @@ These are packages that I maintain for the
 - [onclick][onclick-git] ([AUR][onclick-aur], [upstream][onclick-upstream])
 
 [autojump-rs-git]: https://git.sr.ht/~smlavine/autojump-rs-aur
-[autojump-rs-aur]: https://aur.archlinux.org/packages/autojump-rs
+[autojump-rs-aur]: https://aur.archlinux.org/packages/autojump-rs-bin
 [autojump-rs-upstream]: https://github.com/xen0n/autojump-rs
 
 [catgirl-git]: https://git.sr.ht/~smlavine/catgirl-aur
